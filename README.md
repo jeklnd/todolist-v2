@@ -1,8 +1,11 @@
 # todolist-v2
 
 # Project Description
-The app is a to do list. You can add and delete items off your to do list. You can also create multiple lists by querying new paths. 
-For example, the default list is at the path "/". You can create a "Work" list by going to "https://your_url/work".
-The project was built using Nodejs, Express, and MongoDB on the backend and vanilla CSS on the frontend.
+Keep track of your to dos in one or more lists with this simple to do list app. The project was built using Nodejs, Express, EJS, and MongoDB on the backend and vanilla CSS on the frontend. 
 
 # How to Install and Run the Project
+
+# How to Use the Project
+Add items to the to do list by entering your item in the new item input field and either click the "+" button or press "Enter". 
+Delete items by checking the checkbox next to the item.
+Create a new list by querying a new path. For exampel, the default list is available at "/". To create a "work" list, query "https://your_url/work".
