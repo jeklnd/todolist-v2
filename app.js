@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const _ = require("lodash");
+require('dotenv').config()
 
 // initialize modules
 const app = express();
@@ -12,7 +13,10 @@ app.set("view engine", "ejs");
 
 // connect to database
 mongoose.set("strictQuery", true);
-mongoose.connect("mongodb://localhost:27017/todolistDB");
+// mongoose.connect("mongodb://localhost:27017/todolistDB");
+mongoose.connect(process.env.CONNECTION_STRING, { 
+  useNewUrlParser: true,
+})
 
 // define collections
 const Item = new mongoose.model("Item", itemsSchema = new mongoose.Schema({ 
