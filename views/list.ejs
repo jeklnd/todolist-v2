@@ -1,0 +1,39 @@
+<%- include("header") -%>
+
+<!-- to do list heading -->
+<div class="box" id="heading">
+  <h1><%= listTitle.charAt(0).toUpperCase() + listTitle.slice(1) %></h1>
+</div>
+
+<!-- delete to do list items  -->
+<div class="box">
+  <% newListItems.forEach( (item) => { %>
+  <form action="/delete" method="post">
+    <div class="item">
+      <input
+        type="checkbox"
+        name="checkbox"
+        value="<%=item._id%>"
+        onChange="this.form.submit()"
+      />
+      <p><%= item.name %></p>
+    </div>
+    <input type="hidden" name="listName" value="<%= listTitle %>" />
+  </form>
+  <% }); %>
+
+  <!-- add to do list items -->
+  <form class="item" action="/" method="post">
+    <input
+      type="text"
+      name="newItem"
+      placeholder="new item"
+      autocomplete="off"
+      autofocus="true"
+    />
+    <!-- the value sent back to the server is the value of the text in input-->
+    <button type="submit" name="list" value="<%= listTitle %>">+</button>
+  </form>
+</div>
+
+<%- include("footer") -%>
